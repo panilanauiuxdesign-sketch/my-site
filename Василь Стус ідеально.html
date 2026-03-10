@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<title>Василь Стус</title>
+
+<style>
+
+body{
+margin:0;
+font-family: "Georgia", serif;
+background:#f5f1ed;
+color:#2f2f2f;
+}
+
+/* ГОЛОВНИЙ ЕКРАН */
+
+.hero{
+height:100vh;
+background:url("https://cdn4.suspilne.media/images/resize/1040x1.78/af8cdd5136c97735.jpg") center/cover no-repeat;
+display:flex;
+align-items:center;
+padding-left:80px;
+}
+
+.hero-box{
+background:rgba(255,255,255,0.8);
+padding:40px;
+border-radius:12px;
+max-width:420px;
+}
+
+h1{
+font-size:42px;
+margin:0 0 10px 0;
+}
+
+.hero p{
+font-size:18px;
+margin-bottom:20px;
+}
+
+button{
+background:#c9b6a6;
+border:none;
+padding:12px 26px;
+font-size:16px;
+border-radius:6px;
+cursor:pointer;
+transition:0.3s;
+}
+
+button:hover{
+background:#b9a392;
+}
+
+/* СЕКЦІЯ */
+
+.section{
+display:none;
+padding:70px 15%;
+background:#f8f4f1;
+}
+
+h2{
+margin-top:0;
+font-size:30px;
+}
+
+/* ТВОРИ */
+
+.work{
+cursor:pointer;
+margin:12px 0;
+font-weight:bold;
+color:#6d5a4d;
+}
+
+.work:hover{
+text-decoration:underline;
+}
+
+.text{
+display:none;
+background:#efe6df;
+padding:20px;
+border-radius:8px;
+margin-bottom:15px;
+line-height:1.6;
+max-height:260px;
+overflow:auto;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- ГОЛОВНА -->
+
+<div class="hero">
+
+<div class="hero-box">
+
+<h1>Василь Стус</h1>
+
+<p>
+Український поет, перекладач і дисидент.  
+Один із символів боротьби за свободу України.
+</p>
+
+<button onclick="showMore()">Дізнатись більше</button>
+
+</div>
+
+</div>
+
+<!-- БІОГРАФІЯ -->
+
+<div id="more" class="section">
+
+<h2>Біографія</h2>
+
+<p>
+Василь Стус (1938–1985) — український поет, перекладач, літературознавець,
+правозахисник і один із найвідоміших представників українського
+дисидентського руху.
+</p>
+
+<p>
+Народився 6 січня 1938 року на Вінниччині. Згодом його родина переїхала
+до Донбасу. Стус навчався у Донецькому педагогічному інституті,
+працював учителем, літературним редактором і журналістом.
+</p>
+
+<p>
+У 1965 році він відкрито виступив проти арештів української інтелігенції.
+Після цього почалися переслідування з боку радянської влади.
+Стуса виключили з аспірантури, забороняли друкувати його твори.
+</p>
+
+<p>
+У 1972 році поета вперше заарештували і засудили до таборів.
+Після звільнення він продовжив правозахисну діяльність,
+вступив до Української Гельсінської групи.
+</p>
+
+<p>
+У 1980 році його знову засудили до 10 років таборів
+і 5 років заслання. Помер 4 вересня 1985 року
+в таборі біля села Кучино в Пермській області.
+</p>
+
+<h2>Твори</h2>
+
+<div class="work" onclick="toggleText('poem1')">
+Як добре те, що смерті не боюсь я
+</div>
+
+<div id="poem1" class="text">
+Як добре те, що смерті не боюсь я<br>
+і не питаю, чи тяжкий мій хрест,<br>
+що перед вами, судді, не клонюся<br>
+в передчутті недовідомих верст.<br><br>
+
+Що жив, любив і не набрався скверни,<br>
+ненависті, прокльону, каяття.<br>
+Народе мій, до тебе я ще верну,<br>
+як в смерті обернуся до життя.
+</div>
+
+<div class="work" onclick="toggleText('poem2')">
+Господи, гніву пречистого
+</div>
+
+<div id="poem2" class="text">
+Господи, гніву пречистого<br>
+благаю — не май за зле.<br>
+Де не стоятиму — вистою.<br>
+Спасибі за те, що мале<br>
+людське життя, хоч надією<br>
+довжу його в віках.
+</div>
+
+<div class="work" onclick="toggleText('poem3')">
+Сто років як сконала Січ
+</div>
+
+<div id="poem3" class="text">
+Сто років як сконала Січ,<br>
+Сибір і соловецькі келії.<br>
+Московська орда<br>
+пожирає душі і тіла.<br><br>
+
+А Україна все ж жива,<br>
+і дух її незламний.
+</div>
+
+</div>
+
+<script>
+
+function showMore(){
+
+document.getElementById("more").style.display="block";
+
+window.scrollTo({
+top:document.getElementById("more").offsetTop,
+behavior:"smooth"
+});
+
+}
+
+function toggleText(id){
+
+let text=document.getElementById(id);
+
+if(text.style.display==="block"){
+text.style.display="none";
+}else{
+text.style.display="block";
+}
+
+}
+
+</script>
+
+</body>
+</html>
